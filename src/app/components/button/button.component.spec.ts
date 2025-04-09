@@ -34,7 +34,7 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
     
     const buttonElement = fixture.debugElement.query(By.css('button')).nativeElement;
-    expect(buttonElement.classList.contains('bg-[#4E61F6]')).toBeTrue();
+    expect(buttonElement.classList.contains('bg-primary')).toBeTrue();
     expect(buttonElement.classList.contains('text-white')).toBeTrue();
   });
 
@@ -43,10 +43,10 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
     
     const buttonElement = fixture.debugElement.query(By.css('button')).nativeElement;
-    expect(buttonElement.classList.contains('bg-transparent')).toBeTrue();
+    expect(buttonElement.classList.contains('bg-secondary')).toBeTrue();
     expect(buttonElement.classList.contains('border')).toBeTrue();
-    expect(buttonElement.classList.contains('border-[#4E61F6]')).toBeTrue();
-    expect(buttonElement.classList.contains('text-[#4E61F6]')).toBeTrue();
+    expect(buttonElement.classList.contains('border-primary')).toBeTrue();
+    expect(buttonElement.classList.contains('text-primary')).toBeTrue();
   });
 
   it('should apply fullWidth style when fullWidth is true', () => {

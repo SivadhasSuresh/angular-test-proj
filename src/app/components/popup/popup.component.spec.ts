@@ -96,7 +96,7 @@ describe('PopupComponent', () => {
     fixture.detectChanges();
     
     const buttonsContainer = fixture.debugElement.query(By.css('.mt-6.w-full')).nativeElement;
-    expect(buttonsContainer.classList.contains('space-y-4')).toBeTrue();
+    expect(buttonsContainer.classList.contains('space-y-buttons-gap')).toBeTrue();
   });
 
   it('should use horizontal layout when buttonLayout is horizontal', () => {
@@ -104,7 +104,7 @@ describe('PopupComponent', () => {
     fixture.detectChanges();
     
     const buttonsContainer = fixture.debugElement.query(By.css('.mt-6.w-full')).nativeElement;
-    expect(buttonsContainer.classList.contains('space-x-4')).toBeTrue();
+    expect(buttonsContainer.classList.contains('space-x-buttons-gap')).toBeTrue();
   });
   
   it('should hide title when contentType is message-only', () => {

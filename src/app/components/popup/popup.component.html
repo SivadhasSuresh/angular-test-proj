@@ -1,12 +1,12 @@
 <div class="flex justify-center items-center">
-  <div class="bg-[#F9FAFB] border border-[#F3F4F6] rounded-xl p-6 w-[350px] shadow-md">
+  <div class="bg-popup-bg border border-popup-border rounded-popup p-popup-padding w-[350px] shadow-md">
     <!-- Title and Message Section -->
-    <div class="flex flex-col items-center w-full gap-1">
+    <div class="flex flex-col items-center w-full gap-title-message-gap">
       <!-- Show title only if contentType is not message-only -->
-      <h3 *ngIf="contentType !== 'message-only'" class="text-[#131927] font-semibold text-base leading-6 text-center w-full">{{ title }}</h3>
+      <h3 *ngIf="contentType !== 'message-only'" class="text-text-dark font-semibold text-base leading-6 text-center w-full">{{ title }}</h3>
       
       <!-- Show message only if contentType is not title-only -->
-      <p *ngIf="contentType !== 'title-only'" class="text-[#6D717F] text-sm leading-5 text-center w-full">{{ message }}</p>
+      <p *ngIf="contentType !== 'title-only'" class="text-text-light text-sm leading-5 text-center w-full">{{ message }}</p>
     </div>
 
     <!-- Input field (only shown for content type with input) -->
@@ -23,8 +23,8 @@
       *ngIf="contentType !== 'title-message' && contentType !== 'title-only' && contentType !== 'message-only'"
       class="mt-6 w-full"
       [ngClass]="{
-        'flex flex-col space-y-4': buttonLayout === 'vertical',
-        'flex flex-row space-x-4': buttonLayout === 'horizontal'
+        'flex flex-col space-y-buttons-gap': buttonLayout === 'vertical',
+        'flex flex-row space-x-buttons-gap': buttonLayout === 'horizontal'
       }"
     >
       <div [ngClass]="{'flex-1': buttonLayout === 'horizontal'}">
