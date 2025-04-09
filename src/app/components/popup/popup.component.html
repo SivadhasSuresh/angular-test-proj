@@ -1,0 +1,49 @@
+<div class="flex justify-center items-center">
+  <div class="bg-[#F9FAFB] border border-[#F3F4F6] rounded-xl p-6 w-[350px] shadow-md">
+    <!-- Title and Message Section -->
+    <div class="flex flex-col items-center w-full gap-1">
+      <!-- Show title only if contentType is not message-only -->
+      <h3 *ngIf="contentType !== 'message-only'" class="text-[#131927] font-semibold text-base leading-6 text-center w-full">{{ title }}</h3>
+      
+      <!-- Show message only if contentType is not title-only -->
+      <p *ngIf="contentType !== 'title-only'" class="text-[#6D717F] text-sm leading-5 text-center w-full">{{ message }}</p>
+    </div>
+
+    <!-- Input field (only shown for content type with input) -->
+    <div *ngIf="contentType === 'text-input-buttons'" class="mt-6 w-full">
+      <app-input
+        [placeholder]="inputPlaceholder"
+        [value]="inputValue"
+        (valueChange)="onInputChange($event)"
+      ></app-input>
+    </div>
+
+    <!-- Buttons section -->
+    <div 
+      *ngIf="contentType !== 'title-message' && contentType !== 'title-only' && contentType !== 'message-only'"
+      class="mt-6 w-full"
+      [ngClass]="{
+        'flex flex-col space-y-4': buttonLayout === 'vertical',
+        'flex flex-row space-x-4': buttonLayout === 'horizontal'
+      }"
+    >
+      <div [ngClass]="{'flex-1': buttonLayout === 'horizontal'}">
+        <app-button
+          [text]="primaryButtonText"
+          variant="primary"
+          [fullWidth]="true"
+          (buttonClick)="onPrimaryButtonClick()"
+        ></app-button>
+      </div>
+      
+      <div *ngIf="showSecondaryButton" [ngClass]="{'flex-1': buttonLayout === 'horizontal'}">
+        <app-button
+          [text]="secondaryButtonText"
+          variant="secondary"
+          [fullWidth]="true"
+          (buttonClick)="onSecondaryButtonClick()"
+        ></app-button>
+      </div>
+    </div>
+  </div>
+</div>

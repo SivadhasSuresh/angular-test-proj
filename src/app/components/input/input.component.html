@@ -1,0 +1,12 @@
+<div class="bg-white border border-[#E5E7EA] rounded-xl p-3 flex items-center w-full hover:border-[#4E61F6] focus-within:border-[#4E61F6] transition-colors duration-200">
+  <div class="flex items-center gap-3 w-full">
+    <input 
+      [type]="type"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [value]="value"
+      (input)="onInput($event)"
+      class="placeholder-[#9EA2AE] text-base leading-6 w-full border-none focus:outline-none bg-transparent disabled:opacity-50"
+    />
+  </div>
+</div>

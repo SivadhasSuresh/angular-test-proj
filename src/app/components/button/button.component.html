@@ -1,0 +1,13 @@
+<button 
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick()"
+  [ngClass]="[
+    'font-semibold text-base py-[14px] px-5 rounded-xl flex justify-center items-center transition-colors duration-200',
+    variant === 'primary' ? 'bg-[#4E61F6] text-white hover:bg-[#3D4FE7] active:bg-[#2D3DD4]' : 'bg-transparent border border-[#4E61F6] text-[#4E61F6] hover:bg-[#F5F7FF] active:bg-[#E9EDFF]',
+    fullWidth ? 'w-full' : '',
+    disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+  ]"
+>
+  {{ text }}
+</button>
